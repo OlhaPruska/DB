@@ -1,0 +1,323 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2049630f-e2ee-42e6-8117-9f0657744cb6" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Fact Tourist Tour</ID>
+  <Name>Fact Tourist Tour</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1229" scrolltop="-541" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6392" y="10541" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01cc00009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactTouristTour" left="105" top="2159" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3895" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000370f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FactTouristTour" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1229</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-541</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>105</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>2159</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="a93a76b4-922a-4889-b8d2-7bd97b28abcb">
+    <DataSourceViewID>Tour Service DW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="4dfabc71-85e1-406f-837a-290d6ca8ab7b">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="570514d0-bab6-449c-8d37-06ba782e9a3c">
+      <ID>Id</ID>
+      <Name>Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4b24aae5-2836-4576-a9fb-8cfbd5b2006f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d1eed111-6cf9-4992-b299-308f15551fd3">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="0b9e051b-6935-4db1-9e65-27d587eb4ca5">
+          <AttributeID>Tourist Id</AttributeID>
+          <Name>Tourist Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d398af40-76f5-46ca-b09e-6d1bb06a7eb9">
+          <AttributeID>Tour Id</AttributeID>
+          <Name>Tour Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c69f7205-960b-4265-b301-918ca94a6b54">
+          <AttributeID>Driver Id</AttributeID>
+          <Name>Driver Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="60b859e2-8313-4f72-af37-4341470447b9">
+          <AttributeID>Bus Id</AttributeID>
+          <Name>Bus Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="24d71f72-f8a9-4efd-af97-cadebc5a3bc4">
+          <AttributeID>Tour Name</AttributeID>
+          <Name>Tour Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c235a80d-cfc1-428f-8be1-973897ce07aa">
+          <AttributeID>Tourist Name</AttributeID>
+          <Name>Tourist Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cfb957c1-537c-4554-8148-0026ef7afd98">
+          <AttributeID>Bus Model</AttributeID>
+          <Name>Bus Model</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a375b2d4-046e-47a9-a5de-84a5ce3aceff">
+          <AttributeID>Driver Name</AttributeID>
+          <Name>Driver Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="16ca22b5-2d73-4a32-97a5-7800f800370d">
+          <AttributeID>Base Price</AttributeID>
+          <Name>Base Price</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ed023030-3a5c-4797-8b8c-849eed016040">
+          <AttributeID>Discount Percentage</AttributeID>
+          <Name>Discount Percentage</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="da1934bc-01fc-47dd-9df0-b1bdea0f3800">
+          <AttributeID>Final Price</AttributeID>
+          <Name>Final Price</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="00b8587d-a392-4cf7-92c0-5a0a7ec6c9c1">
+      <ID>Tourist Id</ID>
+      <Name>Tourist Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b6839f45-9c93-43c3-b65b-f84f4414f964">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3dbf9dc9-4ed1-4c3d-8b6a-693ce15bae83">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>tourist_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="96a5d739-8177-4266-8e4c-90e9d725cfd7">
+      <ID>Tour Id</ID>
+      <Name>Tour Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="00e94579-f49e-493b-a9c5-42488b5a6190">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b09042b5-2ca2-4a7d-8cdd-3442fe1564c0">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>tour_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e311dfc9-b091-4186-9119-22f3b1e4e295">
+      <ID>Driver Id</ID>
+      <Name>Driver Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9a9ca9a0-6c1b-464d-9550-1db9e0e6099a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ac5cb80e-5802-46dc-8271-c73f04578bf4">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>driver_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ac06fe03-f506-4c50-a967-54db6545828e">
+      <ID>Bus Id</ID>
+      <Name>Bus Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3353fb40-fd47-4cb6-881e-ec318673e062">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e474249d-7294-407d-8ab3-5cecd5bdae39">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>bus_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="709f652c-6cdd-4068-bf19-8ad7c23e439b">
+      <ID>Tour Name</ID>
+      <Name>Tour Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6cfd5fbc-e99a-4c6c-a737-88f8f225fca8">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8c1f2e3f-671c-42ac-9e93-c56c192fff96">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>tour_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3729ddcb-1cc1-4afc-8818-bb021e38b4d2">
+      <ID>Tourist Name</ID>
+      <Name>Tourist Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a1919b84-8110-4f45-aeac-1ab42b8a62c2">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6758d54c-2955-47fd-994d-f815fd0090a4">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>tourist_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="92afd85b-28dc-4ab0-a443-601fd44c59c4">
+      <ID>Bus Model</ID>
+      <Name>Bus Model</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b8e89cc3-d9b1-49ec-82d1-bb8f94dfa0f6">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="87ae3e1e-7bfa-4fb3-a94c-bd3bb9d6a4c8">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>bus_model</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="47d80578-e067-4130-be84-555c71cfcf75">
+      <ID>Driver Name</ID>
+      <Name>Driver Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="536e185e-71b4-40a3-a497-0336645db564">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9b34f2fc-b40d-47fc-82bd-d0e950f4d0a1">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>driver_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2bf99133-0136-4442-8204-2cd2cac6ffe4">
+      <ID>Base Price</ID>
+      <Name>Base Price</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d75eb2c6-c7d8-48f2-a108-ab4ece1f6186">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a0c40286-c71a-48b6-a608-d4aacd1d571a">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>base_price</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="94e282eb-e7c1-46d3-89a3-145d91879d4a">
+      <ID>Discount Percentage</ID>
+      <Name>Discount Percentage</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="25a5c3d3-e5e7-49d7-8c61-7a76536e99da">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4b3993b3-9a8a-400c-80d3-abb5bd2b0b26">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>discount_percentage</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2b0cb7bf-d61e-4442-ab88-f3c21f66968a">
+      <ID>Final Price</ID>
+      <Name>Final Price</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6a0c6a3a-4ee2-4fc2-bc02-25184557c6c1">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="05269b0e-80b2-452c-8374-c175183db3a3">
+            <TableID>dbo_FactTouristTour</TableID>
+            <ColumnID>final_price</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

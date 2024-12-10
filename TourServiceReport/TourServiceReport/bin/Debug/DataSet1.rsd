@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>TourService</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Fact Tourist Tour'[Id], 'Fact Tourist Tour'[Tourist Name], 'Fact Tourist Tour'[Tour Name], 'Fact Tourist Tour'[Base Price], 'Fact Tourist Tour'[Discount Percentage], 'Fact Tourist Tour'[Final Price], FILTER(VALUES('Fact Tourist Tour'[Tourist Name]), LEFT('Fact Tourist Tour'[Tourist Name], LEN("Jason")) = "Jason"))</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Fact Tourist Tour</DimensionName>
+                    <HierarchyName>Id</HierarchyName>
+                    <HierarchyUniqueName>[Fact Tourist Tour].[Id]</HierarchyUniqueName>
+                    <LevelName>Id</LevelName>
+                    <UniqueName>[Fact Tourist Tour].[Id].[Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Fact Tourist Tour</DimensionName>
+                    <HierarchyName>Tourist Name</HierarchyName>
+                    <HierarchyUniqueName>[Fact Tourist Tour].[Tourist Name]</HierarchyUniqueName>
+                    <LevelName>Tourist Name</LevelName>
+                    <UniqueName>[Fact Tourist Tour].[Tourist Name].[Tourist Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Tourist Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Fact Tourist Tour</DimensionName>
+                    <HierarchyName>Tour Name</HierarchyName>
+                    <HierarchyUniqueName>[Fact Tourist Tour].[Tour Name]</HierarchyUniqueName>
+                    <LevelName>Tour Name</LevelName>
+                    <UniqueName>[Fact Tourist Tour].[Tour Name].[Tour Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Tour Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Fact Tourist Tour</DimensionName>
+                    <HierarchyName>Base Price</HierarchyName>
+                    <HierarchyUniqueName>[Fact Tourist Tour].[Base Price]</HierarchyUniqueName>
+                    <LevelName>Base Price</LevelName>
+                    <UniqueName>[Fact Tourist Tour].[Base Price].[Base Price]</UniqueName>
+                  </ID>
+                  <ItemCaption>Base Price</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Fact Tourist Tour</DimensionName>
+                    <HierarchyName>Discount Percentage</HierarchyName>
+                    <HierarchyUniqueName>[Fact Tourist Tour].[Discount Percentage]</HierarchyUniqueName>
+                    <LevelName>Discount Percentage</LevelName>
+                    <UniqueName>[Fact Tourist Tour].[Discount Percentage].[Discount Percentage]</UniqueName>
+                  </ID>
+                  <ItemCaption>Discount Percentage</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Fact Tourist Tour</DimensionName>
+                    <HierarchyName>Final Price</HierarchyName>
+                    <HierarchyUniqueName>[Fact Tourist Tour].[Final Price]</HierarchyUniqueName>
+                    <LevelName>Final Price</LevelName>
+                    <UniqueName>[Fact Tourist Tour].[Final Price].[Final Price]</UniqueName>
+                  </ID>
+                  <ItemCaption>Final Price</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Tour Service DW</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Fact Tourist Tour].[Tourist Name]</HierarchyUniqueName>
+                  <Condition xsi:type="BeginsWith">
+                    <Basis>Caption</Basis>
+                    <Expression>Jason</Expression>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Fact Tourist Tour'[Id], 'Fact Tourist Tour'[Tourist Name], 'Fact Tourist Tour'[Tour Name], 'Fact Tourist Tour'[Base Price], 'Fact Tourist Tour'[Discount Percentage], 'Fact Tourist Tour'[Final Price], FILTER(VALUES('Fact Tourist Tour'[Tourist Name]), LEFT('Fact Tourist Tour'[Tourist Name], LEN("Jason")) = "Jason"))</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Id">
+        <DataField>Fact Tourist Tour[Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Tourist_Name">
+        <DataField>Fact Tourist Tour[Tourist Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Tour_Name">
+        <DataField>Fact Tourist Tour[Tour Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Base_Price">
+        <DataField>Fact Tourist Tour[Base Price]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Discount_Percentage">
+        <DataField>Fact Tourist Tour[Discount Percentage]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Final_Price">
+        <DataField>Fact Tourist Tour[Final Price]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

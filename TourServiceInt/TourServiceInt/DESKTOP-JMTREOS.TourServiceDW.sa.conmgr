@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-JMTREOS.TourServiceDW.sa"
+  DTS:DTSID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-JMTREOS;User ID=sa;Initial Catalog=TourServiceDW;Provider=SQLOLEDB.1;Application Name=SSIS-TourServiceInt-{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}DESKTOP-JMTREOS.TourServiceDW.sa;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAliSjxZ7PECZ4x3SUZgvKAAAAAACAAAAAAAQZgAAAAEAACAAAADVSwrTHuqaZ7Y4NIaqf2O+63GqyutPckRGPJUOYR8edgAAAAAOgAAAAAIAACAAAAANemJa1XeFsn9ak5mv4m/aX/VEFV7huIia6QOQfcO/unAAAAAfZ917g5aQ9cHE29ojVeNfRON23OWIlvgvlA2fyiLUZXedTaU1BbQ/5dmRBx6TUrzEMmpGxyIP1C+IXx9vMIosn4lnpLZKRpBvv2RartoxSY5NAIwzK8ZJo1TDzzV2FXiahw4wWYIiBT+hCmDcgiSJQAAAAGJnTiOVG4G7C7pO7eyUP4N4HyplIWF2rN7hLWQO4w4DWp7Kp8KbiVLS4rAT/KW7uWzB63s9luSkres7XGaDrEw=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

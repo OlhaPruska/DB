@@ -1,0 +1,89 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>TourServiceMultidimensional</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>GdzNaY4Ati0s4hwBunlWwXxkH6M=07.12.2024 20:50:4607.12.2024 20:50:46</TimeStamp>
+        <ID>
+          <String>Tour Service DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>eGXhr5fvrwEu57h+dZ9mCq/hKSE=07.12.2024 20:51:5007.12.2024 20:51:50</TimeStamp>
+        <ID>
+          <String>Tour Service DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>T9Zdr0tQ7SYx5GbLnhpr9K46Gdw=07.12.2024 20:52:5407.12.2024 20:52:54</TimeStamp>
+        <ID>
+          <String>Dim Bus</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>17AgDowVet1XA8j71W0bVPWLKTs=08.12.2024 21:45:5307.12.2024 20:53:30</TimeStamp>
+        <ID>
+          <String>Dim Tourist</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>4x8R/+YnPAS9hTHR0PDlHNvN2FM=08.12.2024 21:45:5307.12.2024 20:53:30</TimeStamp>
+        <ID>
+          <String>Dim Tour</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>I3in+e/HlDfKTxiIU2Fxyiy/vBg=08.12.2024 21:45:5307.12.2024 20:53:30</TimeStamp>
+        <ID>
+          <String>Dim Driver</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>LrYNjudbfSZetBcgSIKmove2LH0=08.12.2024 21:45:5307.12.2024 20:53:30</TimeStamp>
+        <ID>
+          <String>Fact Tourist Tour</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>Ovm6VwwSzQR9OlQ0AaALLSbJ6AE=08.12.2024 21:45:5307.12.2024 20:53:30Q+o4LGNKjS+zmloFgZUqZDSImXk=07.12.2024 20:53:3007.12.2024 20:53:30</TimeStamp>
+        <ID>
+          <String>Tour Service DW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>CrAQ9CKKph6fmD2mIxYgaejBN0E=07.12.2024 20:49:1207.12.2024 20:49:12</TimeStamp>
+      <ID>
+        <String>TourServiceMultidimensional</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2024-12-08T19:46:41.32Z</LastDeployed>
+</DeploymentSnapshot>

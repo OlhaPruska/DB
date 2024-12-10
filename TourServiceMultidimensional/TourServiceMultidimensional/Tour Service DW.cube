@@ -1,0 +1,486 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8e295b76-3ddd-4afa-921a-0f29d5e54035" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tour Service DW</ID>
+  <Name>Tour Service DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4192" scrolltop="-835" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="65" x="15600" y="11134" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01cc00009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactTouristTour" left="5616" top="5067" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3895" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000370f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FactTouristTour" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDriver" left="20" top="6413" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3196" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00007c0c000003090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimDriver" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimTourist" left="5616" top="0" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3895" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000370f00006b0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimTourist" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimTour" left="11911" top="6233" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3000" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00006b0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimTour" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimBus" left="6063" top="12467" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000003090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimBus" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="7164" top="2168" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__FactTouri__touri__3F466844]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7563" y="2667" />
+              <point x="7563" y="5067" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="9211" top="7167" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__FactTouri__tour___403A8C7D]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="14" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="11911" y="7566" />
+              <point x="10711" y="7566" />
+              <point x="10711" y="7567" />
+              <point x="9511" y="7567" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="2916" top="7167" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__FactTouri__drive__4222D4EF]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="13" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3216" y="7566" />
+              <point x="4416" y="7566" />
+              <point x="4416" y="7567" />
+              <point x="5616" y="7567" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="7164" top="9767" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__FactTouri__bus_i__412EB0B6]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="4" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7563" y="12467" />
+              <point x="7563" y="10067" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4192</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-835</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>65</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="55da6d3e-d523-42b6-bbc9-b4b242c7acb3">
+      <ID>Fact Tourist Tour</ID>
+      <Name>Fact Tourist Tour</Name>
+      <DimensionID>Fact Tourist Tour</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="fc27c3f6-38d3-40de-97be-83349233c3e0">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c6b2e2d8-62fb-485c-b154-ca36f52def76">
+          <AttributeID>Tourist Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5f37e3a2-ed88-42dc-ac61-3a7f898a2019">
+          <AttributeID>Tour Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="48a1ae88-3c31-4664-b712-bb7ac3c0a79c">
+          <AttributeID>Driver Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e774ea81-5261-4900-8dff-c996c3b4095d">
+          <AttributeID>Bus Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="12e827a3-a16d-4b71-a66e-040333f87b8d">
+          <AttributeID>Tour Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4e9eec09-d57c-4a4f-8057-4d25a5ecead5">
+          <AttributeID>Tourist Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e590522e-e794-4d92-ad59-bd267bdfa24e">
+          <AttributeID>Bus Model</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="579452fe-45c7-46dd-8e37-d6fd4eea3411">
+          <AttributeID>Driver Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5253376f-082e-4d3a-8cc2-c268c1b2a27a">
+          <AttributeID>Base Price</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9959205d-efc5-4749-94ad-785b1d90f550">
+          <AttributeID>Discount Percentage</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c68b5d97-e7ea-417f-bd43-fb3a4cbe5cf4">
+          <AttributeID>Final Price</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="afe5f908-debd-4946-9a09-86e79b2a9f1c">
+      <ID>Dim Tourist</ID>
+      <Name>Dim Tourist</Name>
+      <DimensionID>Dim Tourist</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="cd2b0141-8bc0-4596-9bc3-db8cc06e8f75">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e68aa2bb-66bb-47ea-814b-cd7d4d85e848">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2acd456e-645d-4a8a-8250-73f0d9430370">
+          <AttributeID>Phone</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="800dac0e-a15c-4a8f-8f4f-0f9528d2efeb">
+          <AttributeID>Email</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4b0cc1a7-cb5a-4c55-909a-c2f919d64322">
+          <AttributeID>Discount Percentage</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="4a7427dd-3734-4504-8b6c-bb6eb3e8b8a1">
+      <ID>Dim Tour</ID>
+      <Name>Dim Tour</Name>
+      <DimensionID>Dim Tour</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="3561e244-2140-46c0-875f-63ec45580584">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4f33d830-585d-4ea9-9cec-f073add1a6e4">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="27ad4310-ea6d-4fd8-94ea-c439a3454cf7">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="75add3bc-97cb-4a96-9c0c-ed119c2b95a2">
+          <AttributeID>Price</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="59cf977a-f992-45a0-ac34-81290737bc56">
+          <AttributeID>Description</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="fcbb4cf6-18ba-4ad3-b709-68d9737a0e26">
+      <ID>Dim Driver</ID>
+      <Name>Dim Driver</Name>
+      <DimensionID>Dim Driver</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a8d384e3-b496-4e8b-8aa6-70d9587bf8bf">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="600d97ed-fd5f-4eff-ba47-9ddc45f9cbd8">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8c7cd941-d913-49df-ba16-affa56d7c69a">
+          <AttributeID>Phone</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5cb20256-6ef1-49df-a9fd-1f24dfd89225">
+          <AttributeID>License Number</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="dcba27d2-c5dc-4faa-bea3-4ee3e8d4e5c7">
+      <ID>Dim Bus</ID>
+      <Name>Dim Bus</Name>
+      <DimensionID>Dim Bus</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="e05417d3-37fe-4ca3-943c-d8518cc8d24f">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="55a374c3-74e9-4d45-bebe-e87d2947d106">
+          <AttributeID>Model</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1e219de1-4470-4160-a9a8-31c98b08ee8a">
+          <AttributeID>Plate Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="42ed378b-7c56-4155-8492-6f1b523b3603">
+          <AttributeID>Capacity</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="98aee0a8-fdef-4135-827f-8d2859e5ef8f">
+      <ID>Fact Tourist Tour</ID>
+      <Name>Fact Tourist Tour</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="885ff31f-0dc5-4408-a02b-dde4ef1132f3">
+          <ID>Bus Capacity</ID>
+          <Name>Bus Capacity</Name>
+          <Source dwd:design-time-name="12158d44-43bb-45a6-962d-c0b52b96b6fa">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2e7b40da-86c7-4ab1-aa3b-e5cc70e7aef0">
+              <TableID>dbo_FactTouristTour</TableID>
+              <ColumnID>bus_capacity</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d931fb30-0b27-4be8-ae26-bc7721e87054">
+          <ID>Base Price</ID>
+          <Name>Base Price</Name>
+          <Source dwd:design-time-name="df6f77ec-c2e1-4b6a-a786-ccdb7ef4c926">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d54edf14-6678-4c67-80ec-f55fb37cb65b">
+              <TableID>dbo_FactTouristTour</TableID>
+              <ColumnID>base_price</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="abe16f82-8c5d-4ee7-870d-ad67b72eae21">
+          <ID>Discount Percentage</ID>
+          <Name>Discount Percentage</Name>
+          <Source dwd:design-time-name="02a0e582-7027-493d-bc51-a0771f302da4">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="066f7058-c12f-461b-91da-5e2fba9cb95e">
+              <TableID>dbo_FactTouristTour</TableID>
+              <ColumnID>discount_percentage</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b131bfd0-bd1d-4224-b843-e4d65015561c">
+          <ID>Final Price</ID>
+          <Name>Final Price</Name>
+          <Source dwd:design-time-name="faf19c59-0990-4954-8022-42235b6d3782">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d592cd40-4bc2-4974-908b-6abb8d1aa7f8">
+              <TableID>dbo_FactTouristTour</TableID>
+              <ColumnID>final_price</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="72943745-d788-4061-958b-d2736b394e8c">
+          <ID>Fact Tourist Tour Count</ID>
+          <Name>Fact Tourist Tour Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="9ac1932c-2f33-4b1a-a8fd-efd22262cd94">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="13a15d9c-b3c2-4aef-90aa-dcf8c3f392fe">
+              <TableID>dbo_FactTouristTour</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="345b9ffe-356e-45d7-be69-0aae700fe1da">
+          <CubeDimensionID>Fact Tourist Tour</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7e613f70-1a18-49c7-8348-495ba345cad2">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a3b3e434-6618-4fd7-ad68-d1f5180f2c4f">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="75ad61fd-399c-4100-b6a3-50618e15b43e">
+                    <TableID>dbo_FactTouristTour</TableID>
+                    <ColumnID>id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f7c01409-2b33-4368-951c-e0b090333398">
+          <CubeDimensionID>Dim Tourist</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a7a3b09d-e2ba-48ec-85b6-2346d5ec1726">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9424885e-9a3b-4b6f-83e8-54b0922b0bbc">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4a5a87b2-fd21-40f0-ac1a-495cbf20f357">
+                    <TableID>dbo_FactTouristTour</TableID>
+                    <ColumnID>tourist_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2fc3a974-a8b5-4da7-918a-21d6ad2615c7">
+          <CubeDimensionID>Dim Tour</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="9542a36e-4c93-462b-b530-136fcedfa6e9">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f92ffbe4-66d6-4805-9199-a5a3f55a9be3">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="65b99836-779a-4a96-a97b-6b3d1734c3b2">
+                    <TableID>dbo_FactTouristTour</TableID>
+                    <ColumnID>tour_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ec57c4ba-4f8b-4d20-89c8-ab5e04b46f30">
+          <CubeDimensionID>Dim Driver</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7978513e-aef9-4ac1-9994-f28bfd3647d0">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="928adcc1-f71f-48b2-ba81-9f4f692faf36">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="14bf1645-7042-489c-a4d3-60de89c85d1a">
+                    <TableID>dbo_FactTouristTour</TableID>
+                    <ColumnID>driver_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="aa6069e9-0442-4c25-bb75-8508b0e42b0c">
+          <CubeDimensionID>Dim Bus</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="45f48337-6d55-4f58-8069-acaea5ae29ca">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0a2bd3d8-dd9b-428d-aa1b-50d0f9f96565">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c801c403-a39c-445e-b18c-e902fbee7217">
+                    <TableID>dbo_FactTouristTour</TableID>
+                    <ColumnID>bus_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="997be49e-b2a6-46eb-be1d-34078405f391">
+    <DataSourceViewID>Tour Service DW</DataSourceViewID>
+  </Source>
+</Cube>

@@ -1,0 +1,3419 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/6/2024 10:37:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-JMTREOS"
+  DTS:CreatorName="DESKTOP-JMTREOS\User"
+  DTS:DTSID="{9A0A7087-2AC4-4707-873D-D50F882CC6BA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1058"
+  DTS:ObjectName="TourServiceFirstLoad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{1F69BB66-40E3-4EDF-9FF9-10D78B03E59B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Bus"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EB175A30-A1C8-4F6F-B2EB-AE9A94472FC9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Bus"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim_Bus\TourServiceDW_DimBus"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="TourServiceDW_DimBus"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimBus]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Bus\TourServiceDW_DimBus.Connections[OleDbConnection]"
+                  connectionManagerID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourServiceDW.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].Columns[model]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="model"
+                      externalMetadataColumnId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].ExternalColumns[model]"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[model]" />
+                    <inputColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].Columns[plate_number]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="plate_number"
+                      externalMetadataColumnId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].ExternalColumns[plate_number]"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[plate_number]" />
+                    <inputColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].Columns[capacity]"
+                      cachedDataType="i4"
+                      cachedName="capacity"
+                      externalMetadataColumnId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].ExternalColumns[capacity]"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[capacity]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].ExternalColumns[model]"
+                      dataType="wstr"
+                      length="100"
+                      name="model" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].ExternalColumns[plate_number]"
+                      dataType="wstr"
+                      length="20"
+                      name="plate_number" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input].ExternalColumns[capacity]"
+                      dataType="i4"
+                      name="capacity" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Bus\TourServiceDW_DimBus.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Bus\TourServiceDW_DimBus.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourServiceDW_DimBus.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Bus\TourServiceDW_DimBus.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Bus\TourService_Bus"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="TourService_Bus"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Bus]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Bus\TourService_Bus.Connections[OleDbConnection]"
+                  connectionManagerID="{50585C0F-FB04-4673-9445-923AD61382FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourService.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[model]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[model]"
+                      length="100"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[model]"
+                      name="model"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[plate_number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[plate_number]"
+                      length="20"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[plate_number]"
+                      name="plate_number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[capacity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[capacity]"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[capacity]"
+                      name="capacity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[driver_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[driver_id]"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].Columns[driver_id]"
+                      name="driver_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[model]"
+                      dataType="wstr"
+                      length="100"
+                      name="model" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[plate_number]"
+                      dataType="wstr"
+                      length="20"
+                      name="plate_number" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[capacity]"
+                      dataType="i4"
+                      name="capacity" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output].ExternalColumns[driver_id]"
+                      dataType="i4"
+                      name="driver_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[model]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[model]"
+                      name="model" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[plate_number]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[plate_number]"
+                      name="plate_number" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[capacity]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[capacity]"
+                      name="capacity" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[driver_id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[driver_id]"
+                      name="driver_id" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim_Bus.Paths[OLE DB Source Output]"
+              endId="Package\Dim_Bus\TourServiceDW_DimBus.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_Bus\TourService_Bus.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Driver"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BB12DBCF-6BB2-4C57-8693-057331CD7A47}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Driver"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim_Driver\TourServiceDW_DimDriver"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="TourServiceDW_DimDriver"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimDriver]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Driver\TourServiceDW_DimDriver.Connections[OleDbConnection]"
+                  connectionManagerID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourServiceDW.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].Columns[phone]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="phone"
+                      externalMetadataColumnId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].ExternalColumns[phone]"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].Columns[license_number]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="license_number"
+                      externalMetadataColumnId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].ExternalColumns[license_number]"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[license_number]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="15"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input].ExternalColumns[license_number]"
+                      dataType="wstr"
+                      length="50"
+                      name="license_number" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Driver\TourServiceDW_DimDriver.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Driver\TourServiceDW_DimDriver.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourServiceDW_DimDriver.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Driver\TourServiceDW_DimDriver.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Driver\TourService_Driver"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="TourService_Driver"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Driver]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Driver\TourService_Driver.Connections[OleDbConnection]"
+                  connectionManagerID="{50585C0F-FB04-4673-9445-923AD61382FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourService.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      length="100"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      length="15"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[phone]"
+                      name="phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[license_number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].ExternalColumns[license_number]"
+                      length="50"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].Columns[license_number]"
+                      name="license_number"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="15"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output].ExternalColumns[license_number]"
+                      dataType="wstr"
+                      length="50"
+                      name="license_number" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[name]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[phone]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[phone]"
+                      name="phone" />
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[license_number]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[license_number]"
+                      name="license_number" />
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim_Driver.Paths[OLE DB Source Output]"
+              endId="Package\Dim_Driver\TourServiceDW_DimDriver.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_Driver\TourService_Driver.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Tour"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DF8BA02F-ECF8-4A8B-84D2-6912C499337A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Tour"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim_Tour\TourServiceDW_DimTour"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="TourServiceDW_DimTour"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimTour]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Tour\TourServiceDW_DimTour.Connections[OleDbConnection]"
+                  connectionManagerID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourServiceDW.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[date]" />
+                    <inputColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].Columns[price]"
+                      cachedDataType="numeric"
+                      cachedName="price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[price]"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[price]" />
+                    <inputColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].Columns[description]"
+                      cachedDataType="nText"
+                      cachedName="description"
+                      externalMetadataColumnId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[description]"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[description]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      dataType="wstr"
+                      length="10"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[price]"
+                      dataType="numeric"
+                      name="price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input].ExternalColumns[description]"
+                      dataType="nText"
+                      name="description" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Tour\TourServiceDW_DimTour.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tour\TourServiceDW_DimTour.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourServiceDW_DimTour.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tour\TourServiceDW_DimTour.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Tour\TourService_Tour"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="TourService_Tour"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Tour]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Tour\TourService_Tour.Connections[OleDbConnection]"
+                  connectionManagerID="{50585C0F-FB04-4673-9445-923AD61382FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourService.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      length="100"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      length="10"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[price]"
+                      name="price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[bus_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[bus_id]"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[bus_id]"
+                      name="bus_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[description]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[description]"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].Columns[description]"
+                      name="description"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      dataType="wstr"
+                      length="10"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      dataType="numeric"
+                      name="price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[bus_id]"
+                      dataType="i4"
+                      name="bus_id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output].ExternalColumns[description]"
+                      dataType="nText"
+                      name="description" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[name]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[date]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[date]"
+                      name="date" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[price]"
+                      dataType="numeric"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[price]"
+                      name="price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[bus_id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[bus_id]"
+                      name="bus_id" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[description]"
+                      dataType="nText"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[description]"
+                      name="description" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim_Tour.Paths[OLE DB Source Output]"
+              endId="Package\Dim_Tour\TourServiceDW_DimTour.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_Tour\TourService_Tour.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Tourist"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{956F2C5A-1B2D-4564-9FD4-31BFD428B42A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Tourist"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim_Tourist\TourServiceDW_DimTourist"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="TourServiceDW_DimTourist"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimTourist]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Connections[OleDbConnection]"
+                  connectionManagerID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourServiceDW.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].Columns[phone]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="phone"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[phone]"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].Columns[discount_percentage]"
+                      cachedDataType="numeric"
+                      cachedName="discount_percentage"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[discount_percentage]"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[discount_percentage]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="15"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="100"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input].ExternalColumns[discount_percentage]"
+                      dataType="numeric"
+                      name="discount_percentage"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tourist\TourServiceDW_DimTourist.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourServiceDW_DimTourist.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tourist\TourServiceDW_DimTourist.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Tourist\TourService_Tourist"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="TourService_Tourist"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Tourist]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Tourist\TourService_Tourist.Connections[OleDbConnection]"
+                  connectionManagerID="{50585C0F-FB04-4673-9445-923AD61382FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourService.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      length="100"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      length="15"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[phone]"
+                      name="phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      length="100"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[discount_percentage]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[discount_percentage]"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].Columns[discount_percentage]"
+                      name="discount_percentage"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="15"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="100"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output].ExternalColumns[discount_percentage]"
+                      dataType="numeric"
+                      name="discount_percentage"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[name]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[phone]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[phone]"
+                      name="phone" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[email]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[discount_percentage]"
+                      dataType="numeric"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[discount_percentage]"
+                      name="discount_percentage"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim_Tourist.Paths[OLE DB Source Output]"
+              endId="Package\Dim_Tourist\TourServiceDW_DimTourist.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_Tourist\TourService_Tourist.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim_TouristTour"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{89F21B9D-3412-40C9-96A1-707E60C5A51E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_TouristTour"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim_TouristTour\Bus"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Bus"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimBus]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimBus]) [refTable]
+where [refTable].[id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="model" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="plate_number" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="capacity" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_TouristTour\Bus.Connections[OleDbConnection]"
+                  connectionManagerID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourServiceDW.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_TouristTour\Bus.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\Bus.Inputs[Lookup Input].Columns[bus_id]"
+                      cachedDataType="i4"
+                      cachedName="bus_id"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_TouristTour\Bus.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Dim_TouristTour\Bus.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_TouristTour\Bus.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Dim_TouristTour\Bus.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_TouristTour\Bus.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Dim_TouristTour\Bus.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\Bus.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\Bus.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\Bus.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\Bus.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_TouristTour\Driver"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Driver"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDriver]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDriver]) [refTable]
+where [refTable].[id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="phone" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="license_number" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[driver_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_TouristTour\Driver.Connections[OleDbConnection]"
+                  connectionManagerID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourServiceDW.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_TouristTour\Driver.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\Driver.Inputs[Lookup Input].Columns[driver_id]"
+                      cachedDataType="i4"
+                      cachedName="driver_id"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[driver_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_TouristTour\Driver.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Dim_TouristTour\Driver.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_TouristTour\Driver.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Dim_TouristTour\Driver.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_TouristTour\Driver.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Dim_TouristTour\Driver.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\Driver.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\Driver.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\Driver.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\Driver.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_TouristTour\Tour"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Tour"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimTour]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimTour]) [refTable]
+where [refTable].[id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="date" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="price" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="description" dataType="DT_NTEXT" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_TouristTour\Tour.Connections[OleDbConnection]"
+                  connectionManagerID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourServiceDW.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_TouristTour\Tour.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\Tour.Inputs[Lookup Input].Columns[tour_id]"
+                      cachedDataType="i4"
+                      cachedName="tour_id"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_TouristTour\Tour.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Dim_TouristTour\Tour.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_TouristTour\Tour.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Dim_TouristTour\Tour.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_TouristTour\Tour.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Dim_TouristTour\Tour.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\Tour.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\Tour.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\Tour.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\Tour.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_TouristTour\Tourist"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Tourist"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimTourist]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimTourist]) [refTable]
+where [refTable].[id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="phone" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="email" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="discount_percentage" dataType="DT_NUMERIC" length="0" precision="5" scale="2" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tourist_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_TouristTour\Tourist.Connections[OleDbConnection]"
+                  connectionManagerID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourServiceDW.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_TouristTour\Tourist.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\Tourist.Inputs[Lookup Input].Columns[tourist_id]"
+                      cachedDataType="i4"
+                      cachedName="tourist_id"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tourist_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_TouristTour\Tourist.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Dim_TouristTour\Tourist.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_TouristTour\Tourist.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Dim_TouristTour\Tourist.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_TouristTour\Tourist.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Dim_TouristTour\Tourist.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\Tourist.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\Tourist.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\Tourist.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\Tourist.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="TourServiceDW_DimFactTour"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactTouristTour]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Connections[OleDbConnection]"
+                  connectionManagerID="{C02E6FF9-8BB7-4E1B-8D2E-12F26C35A4B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourServiceDW.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[tourist_id]"
+                      cachedDataType="i4"
+                      cachedName="tourist_id"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tourist_id]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tourist_id]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[tourist_name]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="tourist_name"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tourist_name]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tourist_name]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[tour_id]"
+                      cachedDataType="i4"
+                      cachedName="tour_id"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tour_id]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_id]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[tour_name]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="tour_name"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tour_name]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_name]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[tour_date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="tour_date"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tour_date]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_date]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[bus_id]"
+                      cachedDataType="i4"
+                      cachedName="bus_id"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[bus_id]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_id]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[bus_model]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="bus_model"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[bus_model]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_model]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[bus_capacity]"
+                      cachedDataType="i4"
+                      cachedName="bus_capacity"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[bus_capacity]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_capacity]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[driver_id]"
+                      cachedDataType="i4"
+                      cachedName="driver_id"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[driver_id]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[driver_id]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[driver_name]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="driver_name"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[driver_name]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[driver_name]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[base_price]"
+                      cachedDataType="numeric"
+                      cachedName="base_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[base_price]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[base_price]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[discount_percentage]"
+                      cachedDataType="numeric"
+                      cachedName="discount_percentage"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[discount_percentage]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[discount_percentage]" />
+                    <inputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].Columns[final_price]"
+                      cachedDataType="numeric"
+                      cachedName="final_price"
+                      cachedPrecision="21"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[final_price]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[final_price]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tourist_id]"
+                      dataType="i4"
+                      name="tourist_id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tourist_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="tourist_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tour_id]"
+                      dataType="i4"
+                      name="tour_id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tour_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="tour_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[tour_date]"
+                      dataType="wstr"
+                      length="10"
+                      name="tour_date" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[bus_id]"
+                      dataType="i4"
+                      name="bus_id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[bus_model]"
+                      dataType="wstr"
+                      length="100"
+                      name="bus_model" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[bus_capacity]"
+                      dataType="i4"
+                      name="bus_capacity" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[driver_id]"
+                      dataType="i4"
+                      name="driver_id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[driver_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="driver_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[base_price]"
+                      dataType="numeric"
+                      name="base_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[discount_percentage]"
+                      dataType="numeric"
+                      name="discount_percentage"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input].ExternalColumns[final_price]"
+                      dataType="numeric"
+                      name="final_price"
+                      precision="10"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_TouristTour\TourService_FactTour"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="TourService_FactTour"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">USE TourService;
+
+SELECT 
+    tt.tourist_id,
+    t.name AS tourist_name,
+    tt.tour_id,
+    tr.name AS tour_name,
+    tr.date AS tour_date,
+    b.id AS bus_id,
+    b.model AS bus_model,
+    b.capacity AS bus_capacity,
+    d.id AS driver_id,
+    d.name AS driver_name,
+    tr.price AS base_price,
+    t.discount_percentage,
+    (tr.price * (1 - t.discount_percentage / 100)) AS final_price
+FROM Tourist_Tour tt
+JOIN Tourist t ON tt.tourist_id = t.id
+JOIN Tour tr ON tt.tour_id = tr.id
+JOIN Bus b ON tr.bus_id = b.id
+JOIN Driver d ON b.driver_id = d.id;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_TouristTour\TourService_FactTour.Connections[OleDbConnection]"
+                  connectionManagerID="{50585C0F-FB04-4673-9445-923AD61382FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JMTREOS.TourService.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tourist_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tourist_id]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tourist_id]"
+                      name="tourist_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tourist_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tourist_name]"
+                      length="100"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tourist_name]"
+                      name="tourist_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tour_id]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_id]"
+                      name="tour_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tour_name]"
+                      length="100"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_name]"
+                      name="tour_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tour_date]"
+                      length="10"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[tour_date]"
+                      name="tour_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[bus_id]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_id]"
+                      name="bus_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_model]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[bus_model]"
+                      length="100"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_model]"
+                      name="bus_model"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_capacity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[bus_capacity]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[bus_capacity]"
+                      name="bus_capacity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[driver_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[driver_id]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[driver_id]"
+                      name="driver_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[driver_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[driver_name]"
+                      length="100"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[driver_name]"
+                      name="driver_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[base_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[base_price]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[base_price]"
+                      name="base_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[discount_percentage]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[discount_percentage]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[discount_percentage]"
+                      name="discount_percentage"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[final_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[final_price]"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].Columns[final_price]"
+                      name="final_price"
+                      precision="21"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tourist_id]"
+                      dataType="i4"
+                      name="tourist_id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tourist_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="tourist_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tour_id]"
+                      dataType="i4"
+                      name="tour_id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tour_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="tour_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[tour_date]"
+                      dataType="wstr"
+                      length="10"
+                      name="tour_date" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[bus_id]"
+                      dataType="i4"
+                      name="bus_id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[bus_model]"
+                      dataType="wstr"
+                      length="100"
+                      name="bus_model" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[bus_capacity]"
+                      dataType="i4"
+                      name="bus_capacity" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[driver_id]"
+                      dataType="i4"
+                      name="driver_id" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[driver_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="driver_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[base_price]"
+                      dataType="numeric"
+                      name="base_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[discount_percentage]"
+                      dataType="numeric"
+                      name="discount_percentage"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output].ExternalColumns[final_price]"
+                      dataType="numeric"
+                      name="final_price"
+                      precision="21"
+                      scale="8" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tourist_id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tourist_id]"
+                      name="tourist_id" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tourist_name]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tourist_name]"
+                      name="tourist_name" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tour_id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tour_id]"
+                      name="tour_id" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tour_name]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tour_name]"
+                      name="tour_name" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tour_date]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[tour_date]"
+                      name="tour_date" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[bus_id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[bus_id]"
+                      name="bus_id" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[bus_model]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[bus_model]"
+                      name="bus_model" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[bus_capacity]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[bus_capacity]"
+                      name="bus_capacity" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[driver_id]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[driver_id]"
+                      name="driver_id" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[driver_name]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[driver_name]"
+                      name="driver_name" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[base_price]"
+                      dataType="numeric"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[base_price]"
+                      name="base_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[discount_percentage]"
+                      dataType="numeric"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[discount_percentage]"
+                      name="discount_percentage"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[final_price]"
+                      dataType="numeric"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[final_price]"
+                      name="final_price"
+                      precision="21"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim_TouristTour.Paths[Lookup Match Output]"
+              endId="Package\Dim_TouristTour\Tour.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dim_TouristTour\Tourist.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dim_TouristTour.Paths[Lookup Match Output1]"
+              endId="Package\Dim_TouristTour\Bus.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dim_TouristTour\Tour.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dim_TouristTour.Paths[Lookup Match Output2]"
+              endId="Package\Dim_TouristTour\Driver.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dim_TouristTour\Bus.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dim_TouristTour.Paths[Lookup Match Output3]"
+              endId="Package\Dim_TouristTour\TourServiceDW_DimFactTour.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Dim_TouristTour\Driver.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dim_TouristTour.Paths[OLE DB Source Output]"
+              endId="Package\Dim_TouristTour\Tourist.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_TouristTour\TourService_FactTour.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7BF1D777-63CA-4644-B080-A46B0BCAF4D1}"
+      DTS:From="Package\Dim_Bus"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Dim_Driver" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2CF02F71-01BE-4807-A36F-F48781E94D78}"
+      DTS:From="Package\Dim_Driver"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Dim_Tour" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{07E1CD60-005E-43C7-9953-E14D5D522AEB}"
+      DTS:From="Package\Dim_Tour"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Dim_Tourist" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{A4707108-11F2-499A-B9C8-6330D34E8563}"
+      DTS:From="Package\Dim_Tourist"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Dim_TouristTour" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Dim_Bus"
+          TopLeft="49.785714379987,56.7352940727373" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Dim_Driver"
+          TopLeft="40.5000000106437,136.441176382109" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="107.942857195315,98.3352940727373">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.105882309372"
+              Start="0,0"
+              End="0,30.605882309372">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.605882309372" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Dim_Tour"
+          TopLeft="208.357143161248,135.088235233121" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="171.700000010644,156.564705807615">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.6571431506045,0"
+              Start="0,0"
+              End="29.1571431506045,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.1571431506045,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Dim_Tourist"
+          TopLeft="379.785714890884,134.499999965815" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="333.157143161248,155.594117599468">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.6285717296358,0"
+              Start="0,0"
+              End="39.1285717296358,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="39.1285717296358,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Dim_TouristTour"
+          TopLeft="539.78571516762,134.676470580192" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="514.985714890884,155.388235273003">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.8000002767361,0"
+              Start="0,0"
+              End="17.3000002767361,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="17.3000002767361,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Dim_Bus">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Dim_Bus\TourServiceDW_DimBus"
+          TopLeft="26.214285758381,162.264705744943" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Dim_Bus\TourService_Bus"
+          TopLeft="41.9285714422562,77.5588234925456" />
+        <EdgeLayout
+          Id="Package\Dim_Bus.Paths[OLE DB Source Output]"
+          TopLeft="121.271428600319,119.158823492546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.105882252397"
+              Start="0,0"
+              End="0,35.605882252397">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.605882252397" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Bus\TourServiceDW_DimBus">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Bus\TourService_Bus">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim_Driver">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\Dim_Driver\TourServiceDW_DimDriver"
+          TopLeft="61.999999076128,144.999997839332" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Dim_Driver\TourService_Driver"
+          TopLeft="71.9999989271163,60.9999990910292" />
+        <EdgeLayout
+          Id="Package\Dim_Driver.Paths[OLE DB Source Output]"
+          TopLeft="159.799999001622,102.599999091029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.3999987483025"
+              Start="0,0"
+              End="0,34.8999987483025">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.8999987483025" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Driver\TourServiceDW_DimDriver">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Driver\TourService_Driver">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim_Tour">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Dim_Tour\TourServiceDW_DimTour"
+          TopLeft="41.9999993741512,146.999997809529" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Dim_Tour\TourService_Tour"
+          TopLeft="59.9999991059303,47.9999992847443" />
+        <EdgeLayout
+          Id="Package\Dim_Tour.Paths[OLE DB Source Output]"
+          TopLeft="140.599999240041,89.5999992847443">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.3999985247851"
+              Start="0,0"
+              End="0,49.8999985247851">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.8999985247851" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Tour\TourServiceDW_DimTour">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Tour\TourService_Tour">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim_Tourist">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Dim_Tourist\TourServiceDW_DimTourist"
+          TopLeft="64.4999991208315,149.499997854233" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Dim_Tourist\TourService_Tourist"
+          TopLeft="81.4999993145466,55.4999997019768" />
+        <EdgeLayout
+          Id="Package\Dim_Tourist.Paths[OLE DB Source Output]"
+          TopLeft="167.999999217689,97.0999997019768">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.399998152256"
+              Start="0,0"
+              End="0,44.899998152256">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.899998152256" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Tourist\TourServiceDW_DimTourist">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Tourist\TourService_Tourist">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim_TouristTour">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Dim_TouristTour\TourService_FactTour"
+          TopLeft="53.4999992847443,21.4999997615814" />
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Dim_TouristTour\TourServiceDW_DimFactTour"
+          TopLeft="585.499991804361,186.499997749925" />
+        <NodeLayout
+          Size="111.2,41.6"
+          Id="Package\Dim_TouristTour\Tourist"
+          TopLeft="91.4999996125698,100.499999478459" />
+        <EdgeLayout
+          Id="Package\Dim_TouristTour.Paths[OLE DB Source Output]"
+          TopLeft="145.499999448657,63.0999997615814">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.3999997168779"
+              Start="0,0"
+              End="0,29.8999997168779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8999997168779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="100,41.6"
+          Id="Package\Dim_TouristTour\Tour"
+          TopLeft="97.4999999701977,191.499998569488" />
+        <EdgeLayout
+          Id="Package\Dim_TouristTour.Paths[Lookup Match Output]"
+          TopLeft="147.299999791384,142.099999478459">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.3999990910291"
+              Start="0,0"
+              End="0,41.8999990910291">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8999990910291" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,15.1453120455146,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="95.2,41.6"
+          Id="Package\Dim_TouristTour\Bus"
+          TopLeft="234.499998375773,189.499999046326" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Dim_TouristTour\Driver"
+          TopLeft="390.499996498227,189.499999493361" />
+        <EdgeLayout
+          Id="Package\Dim_TouristTour.Paths[Lookup Match Output1]"
+          TopLeft="197.499999970198,211.299998807907">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.9999984055758,0"
+              Start="0,0"
+              End="29.4999984055758,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.4999984055758,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.4413875159621,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_TouristTour.Paths[Lookup Match Output2]"
+          TopLeft="329.699998375773,210.299999269843">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.7999981224537,0"
+              Start="0,0"
+              End="53.2999981224537,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53.2999981224537,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.5413876575232,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_TouristTour.Paths[Lookup Match Output3]"
+          TopLeft="496.899996498227,208.799998621643">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.5999953061342,0"
+              Start="0,0"
+              End="81.0999953061342,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="81.0999953061342,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.64138906568288,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_TouristTour\TourService_FactTour">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_TouristTour\TourServiceDW_DimFactTour">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_TouristTour\Tourist">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTourist]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_TouristTour\Tour">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTour]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_TouristTour\Bus">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimBus]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_TouristTour\Driver">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDriver]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

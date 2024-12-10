@@ -1,0 +1,248 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="18d7c2bd-55ca-4b31-82e5-3ec896f68889" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tour Service DW</ID>
+  <Name>Tour Service DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Tour Service DW</DataSourceID>
+  <Schema>
+    <xs:schema id="Tour_x0020_Service_x0020_DW" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Tour_x0020_Service_x0020_DW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="3726de23-7b65-4fcb-a51b-2d854f7db2d3">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimBus" msprop:DbTableName="DimBus" msprop:FriendlyName="DimBus" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="67177525-5976-4827-a67b-ef3a3a634ca9">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:FriendlyName="id" msprop:DbColumnName="id" msprop:design-time-name="a4215aba-6b75-4d58-abab-c614a3ebb461" type="xs:int" />
+                  <xs:element name="model" msprop:FriendlyName="model" msprop:DbColumnName="model" msprop:design-time-name="913ecc7b-351b-4cfa-9e90-8b4d94b16f32" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="plate_number" msprop:FriendlyName="plate_number" msprop:DbColumnName="plate_number" msprop:design-time-name="fab5b8bc-49c8-46aa-95e8-a31477a55b57" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="capacity" msprop:FriendlyName="capacity" msprop:DbColumnName="capacity" msprop:design-time-name="79037b65-ffb9-482d-a3f9-04112b7aa1f2" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimDriver" msprop:DbTableName="DimDriver" msprop:FriendlyName="DimDriver" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="2139cd09-d26c-4049-97d1-c7f6683fc082">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:FriendlyName="id" msprop:DbColumnName="id" msprop:design-time-name="7a842a52-3ae2-4790-8738-d99368dfb01e" type="xs:int" />
+                  <xs:element name="name" msprop:FriendlyName="name" msprop:DbColumnName="name" msprop:design-time-name="49f35fea-59f0-465e-a713-53ca8799b939" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="phone" msprop:FriendlyName="phone" msprop:DbColumnName="phone" msprop:design-time-name="1563ad9e-f5e4-41a0-8bff-4fdfc3184f8c" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="license_number" msprop:FriendlyName="license_number" msprop:DbColumnName="license_number" msprop:design-time-name="fe9a4c65-3c6c-4030-901f-65c54b826a37" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimTour" msprop:DbTableName="DimTour" msprop:FriendlyName="DimTour" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="1490c1cc-a4d9-4b20-923c-3802c950affc">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:FriendlyName="id" msprop:DbColumnName="id" msprop:design-time-name="795010f1-c6ff-4b67-bddb-058e99865ef1" type="xs:int" />
+                  <xs:element name="name" msprop:FriendlyName="name" msprop:DbColumnName="name" msprop:design-time-name="c6a7d9b2-258b-493b-a2eb-833388f592a7" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="date" msprop:FriendlyName="date" msprop:DbColumnName="date" msprop:design-time-name="a5ef4faa-d255-4fdf-a304-6c8eeffbe32a" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="price" msprop:FriendlyName="price" msprop:DbColumnName="price" msprop:design-time-name="758bb449-ced0-424b-8548-5c2aed735857" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="description" msprop:FriendlyName="description" msprop:DbColumnName="description" msprop:design-time-name="14200677-dae2-4716-9e1f-d24d4ac7eccb" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1073741823" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimTourist" msprop:DbTableName="DimTourist" msprop:FriendlyName="DimTourist" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="3dd9af35-faf4-4e74-97d2-04706fe0658f">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:FriendlyName="id" msprop:DbColumnName="id" msprop:design-time-name="b2394f5c-3dad-45e6-a87a-0bedf1a1faa2" type="xs:int" />
+                  <xs:element name="name" msprop:FriendlyName="name" msprop:DbColumnName="name" msprop:design-time-name="0b2397e9-977c-477b-9f22-e6511d3bbe54" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="phone" msprop:FriendlyName="phone" msprop:DbColumnName="phone" msprop:design-time-name="f1746b2d-4df1-4e71-820a-009a9daa0525" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="email" msprop:FriendlyName="email" msprop:DbColumnName="email" msprop:design-time-name="39e43b65-ed47-43fb-a86a-fef914367414" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="discount_percentage" msprop:FriendlyName="discount_percentage" msprop:DbColumnName="discount_percentage" msprop:design-time-name="d90afb7b-f3c6-46fb-84f5-11b787c6fae9" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactTouristTour" msprop:DbTableName="FactTouristTour" msprop:FriendlyName="FactTouristTour" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="5139e468-4de1-4aa5-b71f-d92f40f7c60f">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id" msprop:DbColumnName="id" msprop:design-time-name="a409ef9e-8b1d-4576-aa4a-6ef58e268ba3" type="xs:int" />
+                  <xs:element name="tourist_id" msprop:FriendlyName="tourist_id" msprop:DbColumnName="tourist_id" msprop:design-time-name="cb017f42-d238-4426-bf06-5bc126bb609d" type="xs:int" />
+                  <xs:element name="tourist_name" msprop:FriendlyName="tourist_name" msprop:DbColumnName="tourist_name" msprop:design-time-name="53e8de2b-6ea7-4d37-813c-59d541c5fda3" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="tour_id" msprop:FriendlyName="tour_id" msprop:DbColumnName="tour_id" msprop:design-time-name="63004750-6b80-46d8-b29c-de5fbd496ab5" type="xs:int" />
+                  <xs:element name="tour_name" msprop:FriendlyName="tour_name" msprop:DbColumnName="tour_name" msprop:design-time-name="27978a42-3aee-4df3-864d-537e55f3d28d" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="tour_date" msprop:FriendlyName="tour_date" msprop:DbColumnName="tour_date" msprop:design-time-name="40ce6e7b-b8f2-4849-b284-c7281b4055f7" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="bus_id" msprop:FriendlyName="bus_id" msprop:DbColumnName="bus_id" msprop:design-time-name="51e335d3-d74d-4f74-aeed-7ecca3ad2aae" type="xs:int" minOccurs="0" />
+                  <xs:element name="bus_model" msprop:FriendlyName="bus_model" msprop:DbColumnName="bus_model" msprop:design-time-name="80b48394-5984-448a-a6a8-294135e8dbeb" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="bus_capacity" msprop:FriendlyName="bus_capacity" msprop:DbColumnName="bus_capacity" msprop:design-time-name="f3806abd-c62d-442a-a12e-93e5b437fb4d" type="xs:int" minOccurs="0" />
+                  <xs:element name="driver_id" msprop:FriendlyName="driver_id" msprop:DbColumnName="driver_id" msprop:design-time-name="d1dd7e50-bd87-40c0-8e2e-9fbee30f6d81" type="xs:int" minOccurs="0" />
+                  <xs:element name="driver_name" msprop:FriendlyName="driver_name" msprop:DbColumnName="driver_name" msprop:design-time-name="4de5718d-1821-4497-8eaa-f482c53bbdc1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="base_price" msprop:FriendlyName="base_price" msprop:DbColumnName="base_price" msprop:design-time-name="b0422268-4337-4af0-8991-d9ac3708b572" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="discount_percentage" msprop:FriendlyName="discount_percentage" msprop:DbColumnName="discount_percentage" msprop:design-time-name="197ec795-c8f8-4524-869d-716b2cb5d163" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="final_price" msprop:FriendlyName="final_price" msprop:DbColumnName="final_price" msprop:design-time-name="e56a60db-a2c6-4016-a3ac-e12ed0721928" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimBus" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:unique name="dbo_DimDriver_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDriver" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:unique name="dbo_DimTour_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimTour" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:unique name="dbo_DimTourist_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimTourist" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:unique name="dbo_FactTouristTour_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactTouristTour" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:keyref name="FK__FactTouri__bus_i__412EB0B6" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FactTouristTour" />
+          <xs:field xpath="bus_id" />
+        </xs:keyref>
+        <xs:keyref name="FK__FactTouri__drive__4222D4EF" refer="dbo_DimDriver_Constraint1">
+          <xs:selector xpath=".//dbo_FactTouristTour" />
+          <xs:field xpath="driver_id" />
+        </xs:keyref>
+        <xs:keyref name="FK__FactTouri__tour___403A8C7D" refer="dbo_DimTour_Constraint1">
+          <xs:selector xpath=".//dbo_FactTouristTour" />
+          <xs:field xpath="tour_id" />
+        </xs:keyref>
+        <xs:keyref name="FK__FactTouri__touri__3F466844" refer="dbo_DimTourist_Constraint1">
+          <xs:selector xpath=".//dbo_FactTouristTour" />
+          <xs:field xpath="tourist_id" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Tour_x0020_Service_x0020_DW xmlns="" />
+  </Schema>
+</DataSourceView>
